@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
               //   Navigator.push(context, MaterialPageRoute(builder: (context) => const PorExtensoPage()));
               // },
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             GestureDetector(
               child: const Row(
                 children: <Widget>[
