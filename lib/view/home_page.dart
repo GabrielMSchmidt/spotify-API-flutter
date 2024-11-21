@@ -1,3 +1,4 @@
+import 'package:apk_spotify_api/service/spotify_service.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -8,6 +9,26 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  String? _accessToken;
+
+  @override
+  void initState() {
+    super.initState();
+    _initializeToken();
+  }
+
+  Future<void> _initializeToken() async {
+    String? token = await requestAcessToken();
+    if (token != null) {
+      setState(() {
+        _accessToken = token;
+        print(_accessToken);
+      });
+    } else {
+      print("Erro ao obter o token.");
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,6 +80,21 @@ class _HomePageState extends State<HomePage> {
               // onTap: () {
               //   Navigator.push(context, MaterialPageRoute(builder: (context) => const BuscaCepPage()));
               // },
+            ),
+            const SizedBox(height: 30),
+            GestureDetector(
+              child: const Row(
+                children: <Widget>[
+                  SizedBox(width: 50),
+                  Icon(Icons.headphones, color: Color.fromARGB(255, 120, 0, 233), size: 70),
+                  SizedBox(width: 10),
+                  Text("Gerar Artista", style: TextStyle(color: Colors.white, fontSize: 22),
+                  )
+                ],
+              ),
+              onTap: () {
+                pesquisarMusicas(_accessToken);
+              },
             ),
             
           ],
