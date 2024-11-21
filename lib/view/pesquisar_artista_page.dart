@@ -113,12 +113,24 @@ class _PesquisarArtistaPageState extends State<PesquisarArtistaPage> {
       padding: EdgeInsets.only(top: 10.0),
       child: Column(
         children: [
-          TextField(
-            readOnly: true,
-            decoration: InputDecoration(
-              labelText: artist["name"],
-              labelStyle: TextStyle(color: const Color.fromARGB(255, 120, 0, 233), fontSize: 22.0),
-              border: OutlineInputBorder(),
+          // TextField(
+          //   readOnly: true,
+          //   decoration: InputDecoration(
+          //     labelText: artist["name"],
+          //     labelStyle: TextStyle(color: const Color.fromARGB(255, 120, 0, 233), fontSize: 22.0),
+          //     border: OutlineInputBorder(),
+          //   ),
+          // ),
+          Text(
+            artist["name"],
+            style: TextStyle(
+              color: const Color.fromARGB(255, 120, 0, 233), fontSize: 22.0
+            ),
+          ),
+          Text(
+            artist["uri"],
+            style: TextStyle(
+              color: const Color.fromARGB(255, 120, 0, 233), fontSize: 22.0
             ),
           ),
           TextField(
