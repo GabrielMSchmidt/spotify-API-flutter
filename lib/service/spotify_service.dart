@@ -36,8 +36,15 @@ Future<String?> requestAcessToken() async{
 Future<Map> pesquisarMusicas(String? access_token, String? campo) async{
   http.Response response;
   response = await http.get(Uri.
-  parse("https://api.spotify.com/v1/search?q=$campo&type=artist&market=BR&limit=1"), headers: {'Authorization': 'Bearer $access_token'});
-  print(json.decode(response.body));
+  parse("https://api.spotify.com/v1/search?q=$campo&type=track&market=BR&limit=1"), headers: {'Authorization': 'Bearer $access_token'});
   return json.decode(response.body);
 }
+
+Future<Map> pesquisarArtistas(String? access_token, String? campo) async{
+  http.Response response;
+  response = await http.get(Uri.
+  parse("https://api.spotify.com/v1/search?q=$campo&type=artist&market=BR&limit=1"), headers: {'Authorization': 'Bearer $access_token'});
+  return json.decode(response.body);
+}
+
 

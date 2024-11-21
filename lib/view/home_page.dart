@@ -1,5 +1,6 @@
 import 'package:apk_spotify_api/service/spotify_service.dart';
 import 'package:apk_spotify_api/view/pesquisar_artista_page.dart';
+import 'package:apk_spotify_api/view/pesquisar_musica_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -64,9 +65,9 @@ class _HomePageState extends State<HomePage> {
                   )
                 ],
               ),
-              // onTap: () {
-              //   Navigator.push(context, MaterialPageRoute(builder: (context) => const PorExtensoPage()));
-              // },
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => PesquisarMusicaPage(access_token: _accessToken,)));
+              },
             ),
             const SizedBox(height: 30),
             GestureDetector(
