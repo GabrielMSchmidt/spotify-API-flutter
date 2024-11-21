@@ -1,4 +1,5 @@
 import 'package:apk_spotify_api/service/spotify_service.dart';
+import 'package:apk_spotify_api/view/pesquisar_artista_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -40,7 +41,8 @@ class _HomePageState extends State<HomePage> {
             Image.asset(
               'assets/imgs/spotify_logo_black.png', 
               fit: BoxFit.contain, 
-              height: 40,),
+              height: 40,
+              ),
           ],
         ),
         centerTitle: true,
@@ -77,26 +79,10 @@ class _HomePageState extends State<HomePage> {
                   )
                 ],
               ),
-              // onTap: () {
-              //   Navigator.push(context, MaterialPageRoute(builder: (context) => const BuscaCepPage()));
-              // },
-            ),
-            const SizedBox(height: 30),
-            GestureDetector(
-              child: const Row(
-                children: <Widget>[
-                  SizedBox(width: 50),
-                  Icon(Icons.headphones, color: Color.fromARGB(255, 120, 0, 233), size: 70),
-                  SizedBox(width: 10),
-                  Text("Gerar Artista", style: TextStyle(color: Colors.white, fontSize: 22),
-                  )
-                ],
-              ),
               onTap: () {
-                pesquisarMusicas(_accessToken);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => PesquisarArtistaPage(access_token: _accessToken,)));
               },
             ),
-            
           ],
         ),
       ),

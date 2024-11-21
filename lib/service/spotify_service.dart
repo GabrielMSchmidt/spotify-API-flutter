@@ -3,7 +3,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-final String _token = "15491|ppB1usJvq70fMVZg2O7oEPbGNpGxcqZH";
 
 Future<String?> requestAcessToken() async{
   const String authUrl = "https://accounts.spotify.com/api/token";
@@ -34,10 +33,10 @@ Future<String?> requestAcessToken() async{
   }
 }
 
-Future<Map> pesquisarMusicas(String? access_token) async{
+Future<Map> pesquisarMusicas(String? access_token, String? campo) async{
   http.Response response;
   response = await http.get(Uri.
-  parse("https://api.spotify.com/v1/search?q=Leall&type=artist&market=BR&limit=10"), headers: {'Authorization': 'Bearer $access_token'});
+  parse("https://api.spotify.com/v1/search?q=$campo&type=artist&market=BR&limit=1"), headers: {'Authorization': 'Bearer $access_token'});
   print(json.decode(response.body));
   return json.decode(response.body);
 }
