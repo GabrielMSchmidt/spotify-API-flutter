@@ -1,16 +1,5 @@
-# apk_spotify_api
+Esse repositório contém o código-fonte do meu projeto feito durante disciplina de Computação Móvel na minha graduação.
 
-A new Flutter project.
+Este projeto se trata de um Mobile App simples feito utilizando o framework Flutter, que consome a API pública do Spotify e faz algumas requests nessa API, como Buscar uma Música ou um Artisa.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+O objetivo principal do projeto foi aprender e reforçar o conceito de integração e consumo de APIs com a aplicação. 
